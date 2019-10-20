@@ -1,0 +1,12 @@
+{
+  country(code: "BR") {
+    name
+    native
+    emoji
+    currency
+    languages {
+      code
+      name
+    }
+  }
+}

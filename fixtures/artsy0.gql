@@ -1,0 +1,10 @@
+{
+  article(id: "foo-bar") {
+    slug
+    title
+    contributingAuthors {
+      internalID
+      name
+    }
+  }
+}

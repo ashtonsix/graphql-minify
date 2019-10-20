@@ -1,0 +1,18 @@
+mutation {
+  sendFeedback(input: {message: "Catty message"}) {
+    feedbackOrError {
+      ... on SendFeedbackMutationSuccess {
+        feedback {
+          message
+        }
+      }
+      ... on SendFeedbackMutationFailure {
+        mutationError {
+          type
+          message
+          detail
+        }
+      }
+    }
+  }
+}

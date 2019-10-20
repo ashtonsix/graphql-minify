@@ -1,0 +1,16 @@
+query GeneFilter($count: Int, $cursor: String) {
+  filterArtworksConnection(
+    geneID: "500-1000-ce"
+    first: $count
+    after: $cursor
+    aggregations: [TOTAL]
+    medium: "*"
+    forSale: true
+  ) {
+    edges {
+      node {
+        slug
+      }
+    }
+  }
+}
