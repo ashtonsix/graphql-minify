@@ -1,14 +1,22 @@
 {
   "name": "graphql-minify",
   "version": "0.1.6",
-  "description": "",
+  "author": "Ashton Six <me@ashtonsix.com>",
+  "description": "Minify your GraphQL queries!",
+  "homepage": "https://github.com/ashtonsix/graphql-minify",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashtonsix/graphql-minify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ashtonsix/graphql-minify/issues"
+  },
+  "license": "ISC",
   "main": "index.js",
   "scripts": {
     "test": "jest",
     "postversion": "git push && git push --tags"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "cross-fetch": "^3.0.4",
     "graphql": "^14.5.8"
