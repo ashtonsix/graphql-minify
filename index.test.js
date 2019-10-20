@@ -38,14 +38,30 @@ const artsyUniqueNames = getUniqueNamesFromIntrospection(artsySchema)
 const countriesUniqueNames = getUniqueNamesFromIntrospection(countriesSchema)
 const swapiUniqueNames = getUniqueNamesFromIntrospection(swapiSchema)
 
-artsyQueries.forEach(query => {
-  expandQuery(minifyQuery(query, artsyUniqueNames), artsyUniqueNames)
+test('does not crash', () => {
+  artsyQueries.forEach(query => {
+    expandQuery(minifyQuery(query, artsyUniqueNames), artsyUniqueNames)
+  })
+
+  countriesQueries.forEach(query => {
+    expandQuery(minifyQuery(query, countriesUniqueNames), countriesUniqueNames)
+  })
+
+  swapiQueries.forEach(query => {
+    expandQuery(minifyQuery(query, swapiUniqueNames), swapiUniqueNames)
+  })
 })
 
-countriesQueries.forEach(query => {
-  expandQuery(minifyQuery(query, countriesUniqueNames), countriesUniqueNames)
+test('makes queries smaller', () => {
+  const query = artsyQueries[0]
+  const minified = minifyQuery(query, artsyUniqueNames)
+  expect(minified.length).toBeLessThan(query.length)
 })
 
-swapiQueries.forEach(query => {
-  expandQuery(minifyQuery(query, swapiUniqueNames), swapiUniqueNames)
+test('restores queries to their original state', () => {
+  const withoutSpaces = s => s.replace(/\s/g, '')
+  const query = artsyQueries[0]
+  const aun = artsyUniqueNames
+  const restored = expandQuery(minifyQuery(query, aun), aun)
+  expect(withoutSpaces(query)).toEqual(withoutSpaces(restored))
 })
