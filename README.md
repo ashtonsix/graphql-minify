@@ -51,8 +51,8 @@ const query = gql`
   }
 `
 
-const minified = minfiyQuery(query, uniqueNames)
-const expanded = expandQuery(query, uniqueNames) // restore the original query
+const minified = minifyQuery(query, uniqueNames)
+const expanded = expandQuery(minified, uniqueNames) // restore the original query
 ```
 
 Your full solution could involve adding `uniqueNames` to your bundle, or making
