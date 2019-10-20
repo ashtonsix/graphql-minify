@@ -29,6 +29,12 @@
 > psst! You can probably achieve even better results with
 > [Automatic Persisted Queries](https://www.apollographql.com/docs/apollo-server/performance/apq/)
 
+## Install
+
+```sh
+npm install --save graphql-minify
+```
+
 ## Usage
 
 ```js
