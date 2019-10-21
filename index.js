@@ -159,15 +159,3 @@ module.exports = {
   minifyQuery,
   expandQuery
 }
-
-// comment
-
-// tried unique parents and more complicated lexing, for single charachter. relay node limitation over 63
-// 2047 max url length for GET (use base64 encode in client link)
-// base 63 fields [_0-9a-zA-Z]
-// anonymous benchmarking:
-//   1%
-//   performance.now()
-//   query before / after
-//   minifySchema size
-//   generate ID in postinstall
